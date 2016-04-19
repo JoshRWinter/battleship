@@ -1,1 +1,1 @@
-menu_background.tga button.tga message.tga buttonsmall.tga buttonarrow.tga -o ..\assets\uiassets.pack
+menu_background.tga button.tga message.tga buttonsmall.tga buttonarrow.tga -o ../assets/uiassets.pack

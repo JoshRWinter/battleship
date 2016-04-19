@@ -1,1 +1,1 @@
-background.tga slot.tga sub.tga destroyer.tga carrier.tga mark.tga board.tga smoke.tga flash.tga -o ..\assets\assets.pack
+background.tga slot.tga sub.tga destroyer.tga carrier.tga mark.tga board.tga smoke.tga flash.tga -o ../assets/assets.pack
