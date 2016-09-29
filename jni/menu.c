@@ -15,7 +15,7 @@ int menu_main(struct state *state){
 	struct button aboutbutton={1.0f,0.5f,BUTTON_WIDTH,BUTTON_HEIGHT,0.0f,"ABOOT",false};
 	struct button quitbutton={1.0f,2.2f,BUTTON_WIDTH,BUTTON_HEIGHT,0.0f,"QUIT",false};
 	struct button musicbutton={-5.25f,2.2f,BUTTON_WIDTH,BUTTON_HEIGHT,0.0f,"MUSIC",false};
-	const char *msg="~ BATTLESHIP ~\nProgrammed by Josh Winter\nC99 & OpenGLES 2.0\n~ Music ~\n"
+	const char *msg="~ BATTLESHIP ~\nProgramming and Art by Josh Winter\nC99 & OpenGLES 2.0\n~ Music ~\n"
 	"BurntOutOnlineMedia - Kings Fall (Kingdoms Rise)\nhttp://burntoutonlinemedia.newgrounds.com/\n"
 	"~ Font ~\nHigh Tower Text";
 	while(process(state->app)){
