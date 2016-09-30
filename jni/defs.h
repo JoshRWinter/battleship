@@ -107,6 +107,7 @@ struct state{
 	slesenv *soundengine;
 	struct android_app *app;
 	struct device device;
+	struct device screen;
 	struct crosshair pointer[2];
 	struct{ftfont *main,*header;}font;
 	struct{int vector,size,rot,texcoords,projection,rgba;}uniform;
