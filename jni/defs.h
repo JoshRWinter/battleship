@@ -30,6 +30,7 @@
 #define SID_SPLASH 2
 #define SID_NO 3
 #define SID_CLICK 4
+#define SID_BELL 5
 
 struct generic{
 	float x,y,w,h,rot;

@@ -485,6 +485,7 @@ int menu_connect(struct state *state,char *buf,int *readytoplay){
 		state->turn=LOCAL_TURN;
 		state->offset=REMOTE_TURN_OFFSET;
 		sprintf(msg_connect,"Connected to\n%s @ %s",state->opponentinitial,state->connectto);
+		if(state->soundenabled)playsound(state->soundengine,state->aassets.sound+SID_BELL,false);
 		return menu_message(state,msg_connect);
 	}
 	struct sockaddr_in6 scanaddr,sockaddr;
@@ -524,6 +525,7 @@ int menu_connect(struct state *state,char *buf,int *readytoplay){
 			state->connector=false;
 			state->offset=LOCAL_TURN_OFFSET;
 			sprintf(msg_connect,"Connected to\n%s @ %s",state->opponentinitial,state->connectto);
+			if(state->soundenabled)playsound(state->soundengine,state->aassets.sound+SID_BELL,false);
 			return menu_message(state,msg_connect);
 		}
 		glUniform4f(state->uniform.rgba,1.0f,1.0f,1.0f,1.0f);

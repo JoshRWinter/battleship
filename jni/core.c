@@ -8,7 +8,7 @@
 #include "defs.h"
 
 int core(struct state *state){
-	char message[50];
+	char message[90];
 	if(state->showmenu){
 		if(!menu_main(state))return false;
 		state->showmenu=false;
@@ -278,7 +278,7 @@ int core(struct state *state){
 }
 
 void render(struct state *state){
-	char message[50];
+	char message[90];
 	glUniform4f(state->uniform.rgba,1.0f,1.0f,1.0f,1.0f);
 	glBindTexture(GL_TEXTURE_2D,state->assets.texture[TID_BACKGROUND].object);
 	draw(state,&state->background);
@@ -440,14 +440,14 @@ void render(struct state *state){
 	else glUniform4f(state->uniform.rgba,0.0f,0.0f,0.0f,1.0f);
 	glBindTexture(GL_TEXTURE_2D,state->font.main->atlas);
 	if(state->offset!=LOCAL_TURN_OFFSET){
-		sprintf(message,"%s's board\n",state->opponentinitial);
+		sprintf(message,"~ %s's board ~\n",state->opponentinitial);
 		if(!state->activeslot){
 			strcat(message,"Tap a slot to enter fire coordinates");
 		}
 		drawtextcentered(state->font.main,0.0f,2.2f+state->offset,message);
 	}
 	if(state->offset!=REMOTE_TURN_OFFSET){
-		sprintf(message,"Your board\nWaiting for %s to make a move...",state->opponentinitial);
+		sprintf(message,"~ Your board ~\nWaiting for %s to make a move...",state->opponentinitial);
 		drawtextcentered(state->font.main,0.0f,2.2f+BOARD_OFFSET+state->offset,message);
 	}
 }
