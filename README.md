@@ -4,5 +4,5 @@ programming and art by josh winter
 
 written in c99 and opengl es 2.0
 
-music by burntoutonlinemedia.newgrounds.com
+music by http://burntoutonlinemedia.newgrounds.com
 
