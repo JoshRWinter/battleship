@@ -6,5 +6,7 @@ written in c99 and opengl es 2.0
 
 music by http://burntoutonlinemedia.newgrounds.com
 
-needs https://bitbucket.org/joshrwinter/abe (build time deps)
+images:  
+[one](http://i.imgur.com/8aEodwA.png)  
+[two](http://i.imgur.com/NJouY68.png)  
 
