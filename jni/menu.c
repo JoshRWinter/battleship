@@ -469,13 +469,19 @@ int menu_connect(struct state *state,char *buf,int *readytoplay){
 			strcpy(state->connectto,tempstring+7);
 		state->sock=socket(ai->ai_family,SOCK_STREAM,IPPROTO_TCP);
 		if(state->sock==-1)logcat("Unable to create socket");
-		if(connect(state->sock,ai->ai_addr,ai->ai_addrlen)){
+		fcntl(state->sock,F_SETFL,fcntl(state->sock,F_GETFL,0)|O_NONBLOCK);
+		int starting_time=time(NULL);
+		int connect_result=1;
+		while(time(NULL)-starting_time<5&&connect_result){
+			connect_result=connect(state->sock,ai->ai_addr,ai->ai_addrlen);
+			usleep(1000);
+		}
+		if(connect_result){
 			freeaddrinfo(ai);
 			sprintf(msg_connect,"Unable to connect to\n%s\nCheck your internet connection.",state->connectto);
 			return menu_message(state,msg_connect);
 		}
 		freeaddrinfo(ai);
-		fcntl(state->sock,F_SETFL,O_NONBLOCK);
 		if(!send_info(state)||!recv_info(state)){
 			reset(state,true);
 			return menu_message(state,"Connection error");
