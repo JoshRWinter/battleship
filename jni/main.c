@@ -10,8 +10,8 @@ void init_display(struct state *state){
 	state->running=true;
 	initextensions();
 	getdims(&state->device,state->app->window,DIMS_LAND);
-	state->screen.w=state->device.w>1920?1920:state->device.w;
-	state->screen.h=state->device.h>1080?1080:state->device.h;
+	state->screen.w=state->device.w>1920?1920:1280;
+	state->screen.h=state->device.h>1080?1080:720;
 	state->display=eglGetDisplay(EGL_DEFAULT_DISPLAY);
 	eglInitialize(state->display,NULL,NULL);
 	EGLConfig config;
