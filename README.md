@@ -10,3 +10,5 @@ images:
 [one](http://i.imgur.com/8aEodwA.png)  
 [two](http://i.imgur.com/NJouY68.png)  
 
+video demo:  
+https://streamable.com/28kcq
